@@ -1,0 +1,65 @@
+// Component
+
+// titles
+%title {
+  font-size: $titleFontSize;
+  color: $titleColor;
+  font-weight: $fontBold;
+}
+
+.page-title {
+  @extend %title;
+}
+
+.section-title {
+  @extend %title;
+  text-transform: none;
+}
+
+// links
+
+.link {
+  font-size: $linkFontSizeDefault;
+  color: $linkColor;
+
+  &.large-link {
+    font-size: $linkLargeFont;
+  }
+
+  &:hover {
+    color: $linkHoverColor;
+  }
+}
+
+// buttons
+
+.btn {
+  padding: 12px 22px;
+  font-size: $btnFontSize;
+  color: $btnDefaultColor;
+  border-radius: 2px;
+  display: inline-block;
+
+  &.btn-default {
+    background-color: $btnDefaultBg;
+
+    &:hover {
+      background-color: $btnDefaultBgHover;
+    }
+  }
+  &.btn-action {
+    background-color: $btnActionBg;
+
+    &:hover {
+      background-color: $btnActionBgHover;
+    }
+  }
+  &.btn-disabled {
+    background-color: $btnDisabledBg;
+
+    &:hover {
+      background-color: $btnDisabledBgHover;
+      cursor: not-allowed;
+    }
+  }
+}
