@@ -2,5 +2,11 @@
   font-weight: $fontBold;
 }
 .turquois-bg{
-  background-color: #80bfca;
+  background-color: $turquois;
+}
+.circle{
+  display: inline-block;
+  height: $circleDiameter;
+  width: $circleDiameter;
+  border-radius: 50%;
 }

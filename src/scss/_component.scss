@@ -105,3 +105,27 @@
     }
   }
 }
+
+// tabs
+.color-tab {
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 3px;
+  color: $tabFontColor;
+
+  .tab-title {
+    font-weight: $fontLight;
+    font-size: $tabTitleFontSize;
+    margin-left: 13px;
+  }
+
+  &:hover {
+    background-color: $tabHoverBg;
+  }
+
+  &.active {
+    background-color: $tabActiveBg;
+  }
+
+}
