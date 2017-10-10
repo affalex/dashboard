@@ -7,17 +7,20 @@
   font-weight: $fontBold;
 }
 
-.page-title {
+.section-title {
   @extend %title;
 }
 
-.section-title {
+.page-title {
   @extend %title;
-  text-transform: none;
+  text-transform: uppercase;
+
+  &.small-title {
+    font-size: $smallTitleFontSize;
+  }
 }
 
 // links
-
 .link {
   font-size: $linkFontSizeDefault;
   color: $linkColor;
@@ -32,13 +35,16 @@
 }
 
 // buttons
-
 .btn {
   padding: 12px 22px;
   font-size: $btnFontSize;
   color: $btnDefaultColor;
   border-radius: 2px;
   display: inline-block;
+
+  & + .btn {
+    margin-left: $defaultIndent;
+  }
 
   &.btn-default {
     background-color: $btnDefaultBg;
@@ -69,6 +75,10 @@
   border-collapse: collapse;
   font-size: $tableFontSize;
 
+  &.full-width {
+    width: 100%;
+  }
+
   tbody {
     tr {
       &:hover {
@@ -77,6 +87,12 @@
     }
   }
   tr { //not allowed to set a border option
+
+    &:last-child {
+      td {
+        border-bottom: 1px solid $lightGrey;
+      }
+    }
 
     th {
       padding: 30px 18px;
@@ -106,6 +122,46 @@
   }
 }
 
+.turquois-bg {
+  background-color: $turquois;
+}
+
+// pagination
+%activePaginationLink {
+  background-color: $xsLightGrey;
+  color: $grey;
+  border-radius: 2px;
+}
+
+.pagination {
+  li {
+    display: inline-block;
+
+    &.active {
+      a {
+        @extend %activePaginationLink;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 14px $defaultIndent;
+
+      &:hover {
+        @extend %activePaginationLink;
+      }
+    }
+  }
+}
+
+// circle
+.circle {
+  display: inline-block;
+  height: $circleDiameter;
+  width: $circleDiameter;
+  border-radius: 50%;
+}
+
 // tabs
 .color-tab {
   cursor: pointer;
@@ -128,4 +184,224 @@
     background-color: $tabActiveBg;
   }
 
+}
+
+// inputs
+textarea {
+  &.input-area {
+    font-size: $inputAreaFontSize;
+    height: 120px;
+    max-width: 155px;
+    padding: 17px;
+    resize: none;
+  }
+}
+
+.form-control {
+  border: 1px solid $inputBorderColor;
+  border-radius: 2px;
+  color: $inputTextColor;
+  font-size: $inputFontSize;
+  display: block;
+  padding: 12px 16px;
+  max-width: 155px;
+
+  &::placeholder {
+    color: $inputTextColor;
+  }
+  &:hover {
+    cursor: pointer;
+    border-color: $inputHoverBorderColor;
+    color: $inputHoverTextColor;
+    &::placeholder {
+      color: $inputHoverTextColor;
+    }
+  }
+  &:focus {
+    color: $inputFocusTextColor;
+    border-color: $inputBorderColor;
+    &::placeholder {
+      color: $inputFocusTextColor;
+    }
+  }
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $xsLightGrey;
+    &:hover {
+      color: $inputTextColor;
+      border-color: $inputDisabledBorderColor;
+    }
+    &::placeholder {
+      color: $inputTextColor;
+    }
+  }
+  &:disabled {
+    @extend .disabled;
+  }
+  &.invalid {
+    border: 2px solid $inputInvalidBorderColor;
+  }
+}
+
+// notifications
+.notification {
+  padding: 10px 13px;
+  font-size: 14px;
+  font-weight: $fontLight;
+  color: #fff;
+  display: inline-block;
+
+  &.success {
+    background-color: $notificationSuccessBgColor;
+    &:hover {
+      background-color: $notificationSuccessHoverBgColor;
+      cursor: pointer;
+    }
+  }
+
+  &.fail {
+    background-color: $notificationFailBgColor;
+    &:hover {
+      background-color: $notificationFailHoverBgColor;
+      cursor: pointer;
+    }
+  }
+}
+
+// container
+.container-fluid {
+  padding: $defaultIndent;
+}
+
+.container-sm {
+  max-width: 684px;
+  margin: 0 auto;
+}
+
+// header
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid $lightGrey;
+  right: 0;
+  left: 0;
+  height: 60px; // убрать высоту и задать блокам, слева бордеры и падинги сверху и снизу
+}
+
+// side bar
+%activeLink {
+  background-color: #282828;
+  color: #fff;
+  border-left-color: $orange;
+}
+
+.aside {
+  background-color: $asideBg;
+  width: $asideWidth;
+  height: 100vh;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+
+  .menu-control {
+    padding: $defaultIndent;
+
+    .menu-btn {
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $darkGrey;
+
+        & + span {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .aside-menu {
+
+    ul {
+
+      li {
+        color: $darkGrey;
+
+        &.active {
+          a {
+            @extend %activeLink;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 14px;
+          border-left: 4px solid transparent;
+
+          &:hover {
+            @extend %activeLink;
+          }
+        }
+      }
+    }
+  }
+}
+
+// your manager block
+.your-manager {
+  padding: 27px $defaultIndent;
+  border-top: 1px solid $black;
+  margin-top: $defaultIndent;
+
+  .manager-info {
+    margin-top: $defaultIndent;
+
+    .manager-photo {
+      position: relative;
+      margin-right: 10px;
+
+      .status {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &.online {
+          background-color: $green;
+        }
+
+        &.offline {
+          background-color: $red;
+        }
+      }
+    }
+  }
+}
+
+// content wrapper
+.content-wrapper {
+  padding: $defaultIndent;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.panel {
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  & + .panel {
+    margin-top: $defaultIndent;
+  }
+
+  .panel-header {
+    border-bottom: 1px solid $lightGrey;
+    padding: $defaultIndent;
+  }
+
+  .panel-body {
+    padding: $defaultIndent;
+  }
 }

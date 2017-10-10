@@ -27,6 +27,10 @@ $blue: #56819f;
 
 $turquois: #80bfca;
 
+// default padding
+//$defaultPadding: 18px;
+$defaultIndent: 18px;
+
 // Component var
 
 // Link component
@@ -38,6 +42,7 @@ $linkLargeFont: 16px;
 // Title component
 $titleColor: #a6a6a6;
 $titleFontSize: 16px;
+$smallTitleFontSize: 14px;
 
 // Btn component
 $btnFontSize: 18px;
@@ -58,7 +63,25 @@ $tabFontColor: #a6a6a6;
 $tabTitleFontSize: 16px;
 $tabHoverBg: #f3f3f1;
 $tabActiveBg: #f3f3f1;
-
 $circleDiameter: 16px;
 
 // Input component
+$inputTextColor: #a6a6a6;
+$inputAreaFontSize: 12px;
+$inputFontSize: 14px;
+$inputBorderColor: $lightGrey;
+$inputHoverBorderColor: #b1b1b1;
+$inputInvalidBorderColor: $red;
+$inputDisabledBorderColor: $lightGrey;
+$inputHoverTextColor: $black;
+$inputFocusTextColor: $black;
+
+// Notification component
+$notificationSuccessBgColor: $lightGreen;
+$notificationSuccessHoverBgColor: $green;
+$notificationFailBgColor: $lightPink;
+$notificationFailHoverBgColor: $pink;
+
+// Side bar component
+$asideBg: #191919;
+$asideWidth: 188px;
