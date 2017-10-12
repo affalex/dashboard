@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dashboard</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!-- HEADER START -->
+<header class="fixed-to-top header">
+    <div class="flex-container container-fluid">
+        <div class="user-control">
+            <!--4 блока, 26мин 19 урок-->
+        </div>
+    </div>
+</header>
+<!-- HEADER END -->
+
+<!-- SIDE BAR START -->
+<aside class="aside fixed-to-top">
+    <div class="menu-control flex-container align-items-center justify-sp-between">
+        <div class="logo">
+            <a href="">
+                <img src="img/aside-logo.png" alt="">
+            </a>
+        </div>
+        <div class="menu-btn">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <div class="aside-menu">
+        <ul>
+            <li><a href="index.html">General</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="">Links</a></li>
+            <li><a href="">Banners</a></li>
+            <li><a href="">Personal data</a></li>
+            <li class="active"><a href="payout.html">Payout</a></li>
+            <li><a href="">Postback</a></li>
+        </ul>
+        <div class="your-manager">
+            <h3 class="page-title small-title">Your manager</h3>
+            <div class="manager-info flex-container align-items-center">
+                <div class="manager-photo">
+                    <img src="img/manager-img.png" alt="">
+                    <div class="status online">
+                        <!--offline-->
+                    </div>
+                </div>
+                <a href="" class="link">Mikhael E.</a>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- SIDE BAR END -->
+
+<main>
+    <div class="content-wrapper">
+        <!--payout history, добавить таблицу с пагинацией внизу + соответствующая линка активна в aside-->
+        <div class="panel payout-history">
+            <div class="panel-header">
+                <h3 class="page-title">Payout history</h3>
+            </div>
+            <div class="date-picker text-center">
+                <!-- blocks with dates -->
+            </div>
+            <div class="panel-body">
+                <div class="container">
+                    <table class="table full-width">
+                        <!-- TO DO: change header title width for each  -->
+                        <thead>
+                        <tr>
+                            <th>
+                                <div class="table-sort"><span>Date</span></div>
+                            </th>
+                            <th>
+                                <div class="table-sort">Amount ($)</div>
+                            </th>
+                            <th>
+                                <div class="table-sort">Deal</div>
+                            </th>
+                            <th>
+                                <div class="table-sort">Account</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>17/08/02 (12:58)</td>
+                            <td>34,425.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>15/08/02 (12:58)</td>
+                            <td>29,436.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>17/08/02 (12:58)</td>
+                            <td>34,425.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>15/08/02 (12:58)</td>
+                            <td>29,436.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>17/08/02 (12:58)</td>
+                            <td>34,425.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>15/08/02 (12:58)</td>
+                            <td>29,436.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>17/08/02 (12:58)</td>
+                            <td>34,425.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                        <tr>
+                            <td>15/08/02 (12:58)</td>
+                            <td>29,436.00</td>
+                            <td>cpl (200)</td>
+                            <td>bank</td>
+                        </tr>
+                    </table>
+                    <ul class="pagination text-center">
+                        <li></li>
+                        <li class="active"><a href="" class="link large-link">1</a></li>
+                        <li><a href="" class="link large-link">2</a></li>
+                        <li><a href="" class="link large-link">3</a></li>
+                        <li><a href="" class="link large-link">4</a></li>
+                        <li><a href="" class="link large-link">5</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</body>
+</html>
